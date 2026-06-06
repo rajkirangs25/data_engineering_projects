@@ -16,5 +16,6 @@ clean-targets:
 
 models:
   airbnb_aws_project:
-    example:
-      +materialized: view
+    bronze:
+      +materialized: table
+      +schema: bronze
