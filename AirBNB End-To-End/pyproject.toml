@@ -7,4 +7,5 @@ requires-python = ">=3.12"
 dependencies = [
     "dbt-core>=1.11.11",
     "dbt-snowflake>=1.11.5",
+    "sqlfmt>=0.0.3",
 ]
