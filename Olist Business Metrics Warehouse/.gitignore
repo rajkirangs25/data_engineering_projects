@@ -1,3 +1,5 @@
 .env
 olist_project/profiles.yml
 logs/
+.venv/
+.vscode/

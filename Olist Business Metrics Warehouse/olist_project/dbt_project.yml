@@ -19,3 +19,6 @@ models:
     stage:
       +materialized: view
       +schema: stage
+    marts:
+      +materialized: table
+      +schema: marts
