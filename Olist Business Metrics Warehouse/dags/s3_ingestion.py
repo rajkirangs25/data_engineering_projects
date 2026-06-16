@@ -55,7 +55,7 @@ def download_from_kaggle(dest: Path) -> Path:
     api.authenticate()
 
     log.info(f"Downloading dataset '{DATASET_SLUG}' …")
-    api.dataset_download_files(DATASET_SLUG, path=str(dest), unzip=False)
+    api.dataset_download_files(DATASET_SLUG, path=str(dest), unzip=False, force=True)
 
     zip_path = dest / "brazilian-ecommerce.zip"
     log.info(f"Unzipping {zip_path} …")
