@@ -321,36 +321,55 @@ Business insights generated:
 # Project Structure
 
 ```text
-olist-data-pipeline/
+Olist Business Metrics Warehouse/
 │
 ├── dags/
-│   └── olist_pipeline.py
+│   ├── olist_pipeline.py
+│   └── s3_ingestion.py
+│
+├── olist_project/
+│   ├── models/
+│   │   ├── marts/
+│   │   │   ├── dim_customers.sql
+│   │   │   ├── dim_date.sql
+│   │   │   ├── dim_products.sql
+│   │   │   ├── dim_sellers.sql
+│   │   │   ├── fact_orders.sql
+│   │   │   └── schema.yml
+│   │   ├── sources/
+│   │   │   └── sources.yml
+│   │   └── stage/
+│   │       ├── stg_customers.sql
+│   │       ├── stg_geolocation.sql
+│   │       ├── stg_order_items.sql
+│   │       ├── stg_order_payments.sql
+│   │       ├── stg_order_reviews.sql
+│   │       ├── stg_orders.sql
+│   │       ├── stg_product_category_name_translation.sql
+│   │       ├── stg_products.sql
+│   │       └── stg_sellers.sql
+│   └── dbt_project.yml
 │
 ├── sql/
-│   ├── setup/
-│   │   ├── create_schemas.sql
-│   │   └── copy_into.sql
-│   │
-│   └── ddl/
-│       ├── customers.sql
-│       ├── orders.sql
-│       ├── payments.sql
-│       └── ...
+│   ├── ddl/
+│   │   ├── customers.sql
+│   │   ├── geolocation.sql
+│   │   ├── order_items.sql
+│   │   ├── order_payments.sql
+│   │   ├── order_reviews.sql
+│   │   ├── orders.sql
+│   │   ├── product_category_name_translation.sql
+│   │   ├── products.sql
+│   │   └── sellers.sql
+│   └── setup/
+│       ├── copy_into.sql
+│       ├── create_schemas.sql
+│       └── resources.sql
 │
-├── dbt_project/
-│   ├── models/
-│   │   ├── staging/
-│   │   └── marts/
-│
-├── scripts/
-│   └── kaggle_to_s3.py
-│
-├── assets/
-│   ├── architecture.png
-│   ├── airflow_dag.png
-│   ├── dashboard.png
-│   └── star_schema.png
-│
+├── .env
+├── .gitignore
+├── docker-compose.yaml
+├── requirements.txt
 └── README.md
 ```
 
